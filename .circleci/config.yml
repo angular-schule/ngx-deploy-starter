@@ -24,5 +24,5 @@ jobs:
       - run: sudo -E ng new your-angular-project --defaults
       - run: cd your-angular-project && sudo -E npm link @angular-schule/ngx-deploy-starter
       - run: cd your-angular-project && sudo -E ng add @angular-schule/ngx-deploy-starter
-      - run: mkdir /example-folder
+      - run: sudo -E mkdir /example-folder
       - run: cd your-angular-project && sudo -E ng deploy
