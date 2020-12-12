@@ -6,6 +6,7 @@
   - [2. npm link](#2-npm-link)
   - [3. Adding to an Angular project -- ng add](#3-adding-to-an-angular-project----ng-add)
   - [4. Testing](#4-testing)
+  - [5. Debugging](#5-debugging)
 - [Publish to NPM](#publish-to-npm)
 - [Usage of Prettier Formatter](#usage-of-prettier-formatter)
 
@@ -145,6 +146,24 @@ To run the tests:
 cd ngx-deploy-starter/src
 npm test
 ```
+
+### 5. Debugging
+
+To debug your deployer you need to:
+
+1. Place `debugger` statement, where you want your deployer stops.
+2. Follow the steps of [npm link](#2-npm-link) described here. compile, link and install linked in a local project
+3. Now, on the project that you linked the deployer, run it on debug mode using:
+    - | Normal Command         | Command on Debug Mode                                                     |
+      | :--------------------- | :------------------------------------------------------------------------ |
+      | `ng deploy`            | `node --inspect-brk ./node_modules/@angular/cli/bin/ng deploy`            |
+      | `ng add YOUR_DEPLOYER` | `node --inspect-brk ./node_modules/@angular/cli/bin/ng add YOUR_DEPLOYER` |
+
+4. Use your favorite [Inspector Client](https://nodejs.org/de/docs/guides/debugging-getting-started/#inspector-clients) to debug
+
+> This is the standard procedure to debug a NodeJs project. If you need more information you can read the official Docs of NodeJs to learn more about it.
+>
+> _https://nodejs.org/de/docs/guides/debugging-getting-started/_
 
 ## Publish to NPM
 
