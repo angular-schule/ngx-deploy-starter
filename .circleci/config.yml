@@ -22,6 +22,6 @@ jobs:
 
       - run: sudo -E npm install -g @angular/cli@next
       - run: sudo -E ng new your-angular-project --defaults
-      - run: cd your-angular-project && sudo -E npm link ngx-deploy-starter
-      - run: cd your-angular-project && sudo -E ng add ngx-deploy-starter
+      - run: cd your-angular-project && sudo -E npm link @angular-schule/ngx-deploy-starter
+      - run: cd your-angular-project && sudo -E ng add @angular-schule/ngx-deploy-starter
       - run: cd your-angular-project && sudo -E ng deploy
