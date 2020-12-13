@@ -28,15 +28,19 @@ This may be useful when you want to try the latest non-published version of this
 
 Follow the instructions for [checking and updating the Angular CLI version](#angular-cli) and then link the package.
 
-### 1. Angular CLI
+### 1. Optional: Latest Angular version
 
-1. Install the next version of the Angular CLI.
+This builder requires the method `getTargetOptions()` from the Angular DevKit which was introduced [here](https://github.com/angular/angular-cli/pull/13825/files).
+All Angular projects with Angular 9 and greater are supposed to be compatible. (Actually it works with some versions of 8.x too, but you want to be up to date anyway, don't you?)
+Execute the next three steps, if your test project is still older.
+
+1. Install the latest version of the Angular CLI.
 
    ```sh
    npm install -g @angular/cli
    ```
 
-2. Run `ng version`, make sure you have installed Angular CLI v8.3.0 or greater.
+2. Run `ng version`, to make sure you have installed Angular v9.0.0 or greater.
 
 3. Update your existing project using the command:
 
@@ -105,13 +109,11 @@ Once you have completed the previous steps to `npm link` the local copy of `@ang
    ng deploy
    ```
 
-````
+   Or with the old builder syntax:
 
- Or with the old builder syntax:
-
- ```sh
- ng run your-angular-project:deploy
-````
+   ```sh
+   ng run your-angular-project:deploy
+   ```
 
 5. You can remove the link later by running `npm unlink`
 
@@ -169,15 +171,19 @@ To debug your deployer you need to:
 
 ```
 cd ngx-deploy-starter/src
-npx prettier --write '**/*'
+npm run prettier
 npm run build
 npm run test
 npm publish dist --access public
 ```
 
-## Usage of Prettier Formatter
+## Keeping track of all the forks
 
-Just execute `npx prettier --write '**/*'` and the code is formated automatically.
-Please ignore the errors for now. ([error] No parser could be inferred for file)
+[ngx-deploy-starter](https://github.com/angular-schule/ngx-deploy-starter/) and
+[angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages/) (both developed by Johannes Hoppe) are follow-up projects of the deprecated [ngx-gh demo](https://github.com/mgechev/ngx-gh).
+This project was a follow-up of the deploy schematics from the [angularfire](https://github.com/angular/angularfire/) project.
 
-We are still working on this, see https://github.com/angular-schule/ngx-deploy-starter/issues/10 .
+To stay in sync with the stuff the Angular team is doing, you might want to keep an eye on the following files:
+
+- [builder.ts](https://github.com/angular/angularfire/blob/master/src/schematics/deploy/builder.ts)
+- [actions.ts](https://github.com/angular/angularfire/blob/master/src/schematics/deploy/actions.ts)
