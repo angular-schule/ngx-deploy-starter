@@ -33,7 +33,6 @@ jobs:
 
       - name: Deploy
         run: |
-          pwd
-          mkdir example-folder
+          mkdir /home/runner/work/ngx-deploy-starter/ngx-deploy-starter/example-folder
           cd your-angular-project
-          ng deploy --target-dir=example-folder
+          ng deploy --target-dir=/home/runner/work/ngx-deploy-starter/ngx-deploy-starter/example-folder
