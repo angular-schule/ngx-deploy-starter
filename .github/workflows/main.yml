@@ -33,6 +33,6 @@ jobs:
 
       - name: Deploy
         run: |
-          sudo -E mkdir /example-folder
+          mkdir $GITHUB_WORKSPACE/example-folder
           cd your-angular-project
-          ng deploy
+          ng deploy --target-dir=$GITHUB_WORKSPACE/example-folder
