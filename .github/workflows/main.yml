@@ -33,6 +33,6 @@ jobs:
 
       - name: Deploy
         run: |
-          mkdir /home/runner/work/ngx-deploy-starter/ngx-deploy-starter/example-folder
+          mkdir $GITHUB_WORKSPACE/example-folder
           cd your-angular-project
-          ng deploy --target-dir=/home/runner/work/ngx-deploy-starter/ngx-deploy-starter/example-folder
+          ng deploy --target-dir=$GITHUB_WORKSPACE/example-folder
