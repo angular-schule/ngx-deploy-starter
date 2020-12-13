@@ -33,6 +33,6 @@ jobs:
 
       - name: Deploy
         run: |
-          mkdir /example-folder
+          sudo -E mkdir /example-folder
           cd your-angular-project
           ng deploy
