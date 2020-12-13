@@ -33,6 +33,7 @@ jobs:
 
       - name: Deploy
         run: |
+          pwd
           mkdir example-folder
           cd your-angular-project
           ng deploy --target-dir=example-folder
