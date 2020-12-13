@@ -27,20 +27,36 @@ ng deploy [options]
 
 The following options are also available.
 
-#### --configuration
+#### --build-target <a name="build-target"></a>
 
 - **optional**
-- Default: `production` (string)
+- Default: `undefined` (string)
 - Example:
-  - `ng deploy` – Angular project is build in production mode
-  - `ng deploy --configuration=test` – Angular project is using the configuration `test` (this configuration must exist in the `angular.json` file)
+  - `ng deploy` – Angular project is built in `production` mode
+  - `ng deploy --build-target=test` – Angular project is using the build configuration `test` (this configuration must exist in the `angular.json` file)
 
-A named build target, as specified in the `configurations` section of `angular.json`.
-Each named target is accompanied by a configuration of option defaults for that target.
-Same as `ng build --configuration=XXX`.
-This command has no effect if the option `--no-build` option is active.
+If no `buildTarget` is set, the `production` build of the default project will be chosen.
+The `buildTarget` simply points to an existing build configuration for your project, as specified in the `configurations` section of `angular.json`.
+Most projects have a default configuration and a production configuration (commonly activated by using the `--prod` flag) but it is possible to specify as many build configurations as needed.
 
-> **This is a proposal from [RFC #1](https://github.com/angular-schule/ngx-deploy-starter/issues/1).**
+This is equivalent to calling the command `ng build --configuration=XXX`.
+This command has no effect if the option `--no-build` is active.
+
+**⚠️ BREAKING CHANGE (v1)**
+
+This option was called `--configuration` in previous versions.
+
+BEFORE (_does not work_):
+
+```
+ng deploy --configuration=test
+```
+
+NOW:
+
+```
+ng deploy --build-target=test
+```
 
 #### --no-build
 
@@ -52,9 +68,7 @@ This command has no effect if the option `--no-build` option is active.
 
 Skip build process during deployment.
 This can be used when you are sure that you haven't changed anything and want to deploy with the latest artifact.
-This command causes the `--configuration` setting to have no effect.
-
-> **This is a proposal from [RFC #1](https://github.com/angular-schule/ngx-deploy-starter/issues/1).**
+This command causes the `--build-target` setting to have no effect.
 
 #### --target-dir
 
@@ -66,7 +80,7 @@ This command causes the `--configuration` setting to have no effect.
 
 > **This is one of the options you can freely choose according to your needs.**
 
-#### --base-href <a name="base-href"></a>
+#### --base-href
 
 - **optional**
 - Default: `undefined` (string)
@@ -78,3 +92,11 @@ Specifies the base URL for the application being built.
 Same as `ng build --base-href=/XXX/`
 
 > **This is an example how to override the workspace set of options.**
+
+## License <a name="license"></a>
+
+Code released under the [MIT license](LICENSE).
+
+<hr>
+
+## 🚀 Powered by [ngx-deploy-starter](https://github.com/angular-schule/ngx-deploy-starter)

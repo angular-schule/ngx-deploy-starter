@@ -1,11 +1,12 @@
 {
   "name": "@angular-schule/ngx-deploy-starter",
-  "version": "0.0.3",
+  "version": "1.0.0-rc.1",
   "description": "Deployment from the Angular CLI to the file system. This is a sample project that helps you to implement your own deployment builder (`ng deploy`) for the Angular CLI.",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && json2ts deploy/schema.json > deploy/schema.d.ts && tsc && copyfiles README.md builders.json collection.json ng-add-schema.json package.json ngx-deploy-starter deploy/schema.json dist",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write ."
   },
   "schematics": "./collection.json",
   "builders": "./builders.json",
@@ -37,29 +38,29 @@
   },
   "homepage": "https://github.com/angular-schule/ngx-deploy-starter/#readme",
   "devDependencies": {
-    "@angular-devkit/architect": "^0.803.0",
-    "@angular-devkit/core": "^8.3.0",
-    "@angular-devkit/schematics": "^8.3.0",
-    "@types/fs-extra": "^8.0.0",
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.6.9",
-    "copyfiles": "^2.1.1",
-    "husky": "^3.0.7",
-    "jest": "^24.8.0",
-    "json-schema-to-typescript": "^7.0.0",
-    "prettier": "1.18.2",
-    "pretty-quick": "^1.11.1",
-    "rimraf": "^2.6.3",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.3"
+    "@angular-devkit/architect": ">= 0.900 < 0.1200",
+    "@angular-devkit/core": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@angular-devkit/schematics": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@types/fs-extra": "^9.0.4",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.7",
+    "copyfiles": "^2.4.0",
+    "husky": "^4.3.5",
+    "jest": "^26.6.3",
+    "json-schema-to-typescript": "^9.1.1",
+    "prettier": "2.1.2",
+    "pretty-quick": "^3.1.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4",
+    "typescript": ">=4.0.0 <4.1.0"
   },
   "peerDependencies": {
-    "@angular-devkit/architect": ">=0.800.0",
-    "@angular-devkit/core": ">=8.0.0",
-    "@angular-devkit/schematics": ">=8.0.0"
+    "@angular-devkit/architect": ">= 0.900 < 0.1200",
+    "@angular-devkit/core": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@angular-devkit/schematics": "^9.0.0 || ^10.0.0 || ^11.0.0"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^9.0.1"
   },
   "husky": {
     "hooks": {
@@ -78,6 +79,10 @@
       "jsx",
       "json",
       "node"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
     ]
   }
 }
