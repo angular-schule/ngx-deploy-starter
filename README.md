@@ -45,7 +45,7 @@ Please keep the spirit of Open Source alive and use the MIT or a compatible lice
 
 This project also aims to be a reference for the existing builders.
 Recommendations are made through RFCs (Request for Comments), and we are very pleased about their adoption.
-[Here is a list of all existing RFCs](https://github.com/angular-schule/ngx-deploy-starter/issues?q=is%3Aissue+%5BRFC%5D).
+[Here is a list of all existing RFCs](https://github.com/angular-schule/ngx-deploy-starter/discussions?discussions_q=RFC+in%3Atitle).
 
 ## License
 
