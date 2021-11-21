@@ -31,8 +31,8 @@ export default async function deploy(
       ...(options.baseHref && { baseHref: options.baseHref })
     };
 
-    context.logger.info(`� Building "${context.target.project}"`);
-    context.logger.info(`� Build target "${buildTarget.name}"`);
+    context.logger.info(`📦 Building "${context.target.project}"`);
+    context.logger.info(`📦 Build target "${buildTarget.name}"`);
 
     const build = await context.scheduleTarget(
       targetFromTargetString(buildTarget.name),
