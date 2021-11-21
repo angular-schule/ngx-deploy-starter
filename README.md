@@ -26,6 +26,7 @@ We hope for an inspiring discussion, pull requests and questions.
 - [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages) – Deploy your Angular app to **GitHub pages** directly from the Angular CLI! 🚀
 - [ngx-deploy-docker](https://github.com/kauppfbi/ngx-deploy-docker) – Deploy your Angular Application to a **Docker registry** directly from the Angular CLI! 🚀
 - [ngx-deploy-npm](https://github.com/bikecoders/ngx-deploy-npm) – Deploy your Angular Package to **NPM** directly from the Angular CLI! 🚀
+- [ngx-deploy-ftp](https://github.com/bohoffi/ngx-deploy-ftp) – Deploy Angular apps to an **FTP remote** using the Angular CLI! 🚀
 
 ## Goal 1: How to make your own deploy builder
 
